@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="m-auto max-w-screen-2xl w-screen min-h-screen py-6 md:p-10 lg:p-8 flex justify-between flex-wrap">
+    <div className="m-auto max-w-screen-2xl w-full min-h-screen py-6 md:p-10 lg:p-8 flex justify-between flex-wrap">
       <div className="lg:w-1/2 md:w-full">
         <div>
           <h1 className="text-3xl text-center text-white font-bold py-8 md:text-5xl md:text-left">

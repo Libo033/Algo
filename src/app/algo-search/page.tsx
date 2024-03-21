@@ -2,6 +2,7 @@
 import NavigationTitle from "@/components/NavigationTitle";
 import React, { useEffect, useId } from "react";
 import info from "../../libs/Algo.json";
+import AlgoSearchPlayground from "@/components/AlgoSearchPlayground";
 
 const AlgoSearch = () => {
   const bloq = useId();
@@ -25,7 +26,10 @@ const AlgoSearch = () => {
         </div>
         <div className="pt-6 md:pt-8">
           {info.search.map((al) => (
-            <div className="px-4 mb-10 md:px-12 lg:px-28 xl:px-44">
+            <div
+              key={al.title}
+              className="px-4 mb-10 md:px-12 lg:px-28 xl:px-44"
+            >
               <p className="text-white text-xl underline mb-2 md:text-2xl">
                 {al.title}
               </p>
@@ -35,6 +39,11 @@ const AlgoSearch = () => {
             </div>
           ))}
         </div>
+        <div className="border border-blue-50/25 mx-4 md:mx-12 lg:mx-28 xl:mx-44"></div>
+        <h3 className="text-2xl text-center text-white py-6">
+          ALGO PLAYGROUND
+        </h3>
+        <AlgoSearchPlayground />
       </div>
     </div>
   );

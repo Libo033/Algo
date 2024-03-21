@@ -89,10 +89,10 @@ const Home = () => {
               They can be of different types based on their approach or the data
               structure in which the element should be found.
             </p>
-            <div className="mb-8 md:flex md:justify-center">
+            <div className="mb-8 flex justify-center">
               <button
                 onClick={() => handleDisappear("algo-search")}
-                className="ease-in-out duration-100 hover:bg-blue-100/25 text-white text-sm flex gap-2 place-content-center border rounded-lg py-4 md:w-3/6 lg:w-2/6"
+                className="ease-in-out duration-100 hover:bg-blue-100/25 text-white text-sm flex gap-2 place-content-center border rounded-lg py-4 w-3/6 lg:w-2/6"
               >
                 ALGO SEARCH
                 <Image
@@ -110,9 +110,9 @@ const Home = () => {
               sorting algorithms are used to sort groups of data in an
               increasing or decreasing manner.
             </p>
-            <div className="mb-8 md:flex md:justify-center">
+            <div className="mb-8 flex justify-center">
               <button
-                className="ease-in-out duration-100 hover:bg-blue-100/25 text-white text-sm flex gap-2 place-content-center border rounded-lg py-4 md:w-3/6 lg:w-2/6"
+                className="ease-in-out duration-100 hover:bg-blue-100/25 text-white text-sm flex gap-2 place-content-center border rounded-lg py-4 w-3/6 lg:w-2/6"
                 onClick={() => handleDisappear("algo-sort")}
               >
                 ALGO SORT

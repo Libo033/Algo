@@ -1,0 +1,26 @@
+{
+  "search": [
+    {
+      "title": "Linear Search",
+      "info": "Linear Search is defined as a sequential search algorithm that starts at one end and goes through each element of a list until the desired element is found, otherwise the search continues till the end of the data set."
+    },
+    {
+      "title": "Binary Search",
+      "info": "Binary Search is defined as a searching algorithm used in a sorted array by repeatedly dividing the search interval in half. To apply Binary Search algorithm the data structure must be sorted."
+    }
+  ],
+  "sort": [
+    {
+      "title": "Bubble Sort",
+      "info": "Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high."
+    },
+    {
+      "title": "Gnome Sort",
+      "info": "Gnome Sort also called Stupid sort is based on the concept of a Garden Gnome sorting his flower pots. A garden gnome sorts the flower pots by the following method- He looks at the flower pot next to him and the previous one; if they are in the right order he steps one pot forward, otherwise he swaps them and steps one pot backwards. If there is no previous pot (he is at the starting of the pot line), he steps forwards; if there is no pot next to him (he is at the end of the pot line), he is done."
+    },
+    {
+      "title": "Insertion Sort",
+      "info": "Insertion sort is a simple sorting algorithm that works similarly to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed in the correct position in the sorted part."
+    }
+  ]
+}

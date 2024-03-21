@@ -1,10 +1,35 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useId } from "react";
 
 // https://www.geeksforgeeks.org/introduction-to-algorithms/
 
 const Home = () => {
+  const r = useRouter();
+  const bloq = useId();
+
+  const handleDisappear = (redirect: string) => {
+    const main = document.getElementById(bloq) as HTMLDivElement;
+
+    document.body.classList.add("overflow-hidden"); // oculto el despl
+    window.scrollTo(0, 0); // lo llevo a arriba
+    main.classList.add("animate-disappear"); // hago que baje
+    setTimeout(() => {
+      main.classList.add("translate-y-full"); // lo mantengo abajo
+      r.push(redirect);
+    }, 500);
+  };
+
+  useEffect(() => {
+    if (document.body) {
+      setTimeout(() => {
+        document.body.classList.remove("overflow-hidden");
+      }, 600);
+    }
+  }, []);
+
   return (
     <div className="m-auto max-w-screen-2xl w-full min-h-screen h-fit py-6 md:py-8">
       <nav>
@@ -14,7 +39,7 @@ const Home = () => {
           </h2>
         </Link>
       </nav>
-      <div className="pt-10 animate-appear md:pt-12">
+      <div id={bloq} className="pt-10 animate-appear md:pt-12">
         <div className="px-4 mb-10 md:px-12 lg:px-28 xl:px-44">
           <p className="text-white text-xl underline mb-2 md:text-2xl">
             Definition of Algorithm
@@ -65,9 +90,9 @@ const Home = () => {
               structure in which the element should be found.
             </p>
             <div className="mb-8 md:flex md:justify-center">
-              <Link
+              <button
+                onClick={() => handleDisappear("algo-search")}
                 className="ease-in-out duration-100 hover:bg-blue-100/25 text-white text-sm flex gap-2 place-content-center border rounded-lg py-4 md:w-3/6 lg:w-2/6"
-                href={"/algo-search"}
               >
                 ALGO SEARCH
                 <Image
@@ -76,7 +101,7 @@ const Home = () => {
                   width={18}
                   height={18}
                 />
-              </Link>
+              </button>
             </div>
             <p className="text-white text-sm text-justify mb-4 md:text-base">
               2 · Sorting is arranging a group of data in a particular manner
@@ -86,9 +111,9 @@ const Home = () => {
               increasing or decreasing manner.
             </p>
             <div className="mb-8 md:flex md:justify-center">
-              <Link
+              <button
                 className="ease-in-out duration-100 hover:bg-blue-100/25 text-white text-sm flex gap-2 place-content-center border rounded-lg py-4 md:w-3/6 lg:w-2/6"
-                href={"/algo-sort"}
+                onClick={() => handleDisappear("algo-sort")}
               >
                 ALGO SORT
                 <Image
@@ -97,7 +122,7 @@ const Home = () => {
                   width={18}
                   height={18}
                 />
-              </Link>
+              </button>
             </div>
           </div>
         </div>

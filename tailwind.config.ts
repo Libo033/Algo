@@ -19,12 +19,12 @@ const config: Config = {
           to: { opacity: "100%" },
         },
         fromBottom: {
-          from: { transform: "translateY(100vh)" },
-          to: { transform: "translateY(0)" },
+          from: { transform: "translateY(200vh)", overflow: "hidden" },
+          to: { transform: "translateY(0)", overflow: "hidden" },
         },
         toBottom: {
-          from: { transform: "translateY(0)" },
-          to: { transform: "translateY(100vh)" },
+          from: { transform: "translateY(0)", overflow: "hidden" },
+          to: { transform: "translateY(200vh)", overflow: "hidden" },
         },
       },
       animation: {

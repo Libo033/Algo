@@ -32,6 +32,15 @@ body {
   }
 }
 
+@keyframes titleAppear {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 @keyframes rotateBg {
   0%,
   100% {

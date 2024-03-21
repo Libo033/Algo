@@ -14,7 +14,7 @@ const Home = () => {
           </h2>
         </Link>
       </nav>
-      <div className="pt-10 md:pt-12">
+      <div className="pt-10 animate-appear md:pt-12">
         <div className="px-4 mb-10 md:px-12 lg:px-28 xl:px-44">
           <p className="text-white text-xl underline mb-2 md:text-2xl">
             Definition of Algorithm

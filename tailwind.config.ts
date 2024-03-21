@@ -13,6 +13,26 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        opacity: {
+          from: { opacity: "0%" },
+          to: { opacity: "100%" },
+        },
+        fromBottom: {
+          from: { transform: "translateY(100vh)" },
+          to: { transform: "translateY(0)" },
+        },
+        toBottom: {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(100vh)" },
+        },
+      },
+      animation: {
+        title: "opacity 1s 1 0s",
+        other: "opacity 450ms 1 0s",
+        appear: "fromBottom 600ms 1 0s",
+        disappear: "toBottom 600ms 1 0s",
+      },
     },
   },
   plugins: [],

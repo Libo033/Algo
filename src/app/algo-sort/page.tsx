@@ -29,7 +29,7 @@ const AlgoSort = () => {
 
   return (
     <div className="m-auto max-w-screen-2xl w-full min-h-screen h-fit py-6 md:py-8">
-      <nav>
+      <nav className="flex justify-center">
         <button onClick={() => handleDisappear()}>
           <h2 className="text-4xl text-center text-white font-bold">
             ALGO APP

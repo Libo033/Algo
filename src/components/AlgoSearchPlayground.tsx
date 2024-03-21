@@ -1,4 +1,5 @@
 "use client";
+import { buttonSelected } from "@/libs/helpers";
 import React, { useEffect, useState } from "react";
 
 const defArray = [
@@ -15,6 +16,7 @@ const defArray = [
 
 const AlgoSearchPlayground = () => {
   const [limit, setLimit] = useState<number>(40);
+  const [algo, setAlgo] = useState<string>("");
 
   useEffect(() => {
     if (window) {
@@ -22,8 +24,6 @@ const AlgoSearchPlayground = () => {
       if (window.innerWidth > 640 && window.innerWidth <= 768) setLimit(64);
       if (window.innerWidth > 768 && window.innerWidth <= 1024) setLimit(72);
       if (window.innerWidth > 1024 && window.innerWidth <= 1536) setLimit(99);
-
-      console.log(window.innerWidth);
     }
   }, []);
 
@@ -46,11 +46,17 @@ const AlgoSearchPlayground = () => {
         </button>
       </div>
       <p className="text-white text-2xl">Options:</p>
-      <div className="flex gap-2 mt-2 mb-4">
-        <button className="w-3/6 py-2 border border-blue-300 rounded-md text-black bg-blue-200/70">
+      <div className="flex gap-2 mt-2 mb-4 lg:gap-6">
+        <button
+          onClick={() => setAlgo("B")}
+          className={buttonSelected(algo, "B")}
+        >
           BINARY SEARCH
         </button>
-        <button className="w-3/6 py-2 text-white border border-blue-300 bg-blue-50/10 rounded-md">
+        <button
+          onClick={() => setAlgo("L")}
+          className={buttonSelected(algo, "L")}
+        >
           LINEAR SEARCH
         </button>
       </div>
@@ -59,17 +65,21 @@ const AlgoSearchPlayground = () => {
           Number to search:
         </label>
         <input
-          className="w-2/6 px-2 py-3 bg-slate-300 border border-blue-800 rounded-md outline-0 outline-blue-300 outline focus:bg-white focus:outline-1 hover:bg-slate-200"
+          id="toSearch"
+          className="w-2/6 px-2 py-3 bg-slate-300 border border-blue-800 rounded-md outline-0 outline-blue-300 outline focus:bg-white focus:outline-1 hover:bg-slate-200 lg:w-1/6"
           type="number"
+          autoComplete="off"
         />
       </div>
       <div className="flex flex-col gap-2">
-        <label className="text-white text-xl mt-4" htmlFor="toSearch">
+        <label className="text-white text-xl mt-4" htmlFor="delay">
           Delay:
         </label>
         <input
-          className="w-2/6 px-2 py-3 bg-slate-300 border border-blue-800 rounded-md outline-0 outline-blue-300 outline focus:bg-white focus:outline-1 hover:bg-slate-200"
+          id="delay"
+          className="w-2/6 px-2 py-3 bg-slate-300 border border-blue-800 rounded-md outline-0 outline-blue-300 outline focus:bg-white focus:outline-1 hover:bg-slate-200 lg:w-1/6"
           type="number"
+          autoComplete="off"
           defaultValue={10}
         />
       </div>

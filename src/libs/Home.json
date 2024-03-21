@@ -1,0 +1,24 @@
+{
+  "definition": {
+    "title": "Definition of Algorithm",
+    "text": "The word Algorithm means ”A set of finite rules or instructions to be followed in calculations or other problem-solving operations” Or ”A procedure for solving a mathematical problem in a finite number of steps that frequently involves recursive operations”."
+  },
+  "whatis": {
+    "title": "What is the need for algorithms?",
+    "text": [
+      "· Algorithms are necessary for solving complex problems efficiently and effectively.",
+      "· They help to automate processes and make them more reliable, faster, and easier to perform.",
+      "· Algorithms also enable computers to perform tasks that would be difficult or impossible for humans to do manually.",
+      "· They are used in various fields such as mathematics, computer science, engineering, finance, and many others to optimize processes, analyze data, make predictions, and provide solutions to problems."
+    ]
+  },
+  "types": {
+    "title": "Types of Algorithms:",
+    "subtitle": "There are several types of algorithms available. Some important algorithms are:",
+    "type": [
+      "1 · Searching algorithms are the ones that are used for searching elements or groups of elements from a particular data structure. They can be of different types based on their approach or the data structure in which the element should be found.",
+      "2 · Sorting is arranging a group of data in a particular manner according to the requirement. The algorithms which help in performing this function are called sorting algorithms. Generally sorting algorithms are used to sort groups of data in an increasing or decreasing manner."
+    ],
+    "button": ["ALGO SEARCH", "ALGO SORT"]
+  }
+}

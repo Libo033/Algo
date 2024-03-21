@@ -1,23 +1,9 @@
 "use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import NavigationTitle from "@/components/NavigationTitle";
 import React, { useEffect, useId } from "react";
 
 const AlgoSearch = () => {
-  const r = useRouter();
   const bloq = useId();
-
-  const handleDisappear = () => {
-    const main = document.getElementById(bloq) as HTMLDivElement;
-
-    document.body.classList.add("overflow-hidden"); // oculto el despl
-    window.scrollTo(0, 0); // lo llevo a arriba
-    main.classList.add("animate-disappear"); // hago que baje
-    setTimeout(() => {
-      main.classList.add("translate-y-full"); // lo mantengo abajo
-      r.push("home");
-    }, 500);
-  };
 
   useEffect(() => {
     if (document.body) {
@@ -29,13 +15,7 @@ const AlgoSearch = () => {
 
   return (
     <div className="m-auto max-w-screen-2xl w-full min-h-screen h-fit py-6 md:py-8">
-      <nav className="flex justify-center">
-        <button onClick={() => handleDisappear()}>
-          <h2 className="text-4xl text-center text-white font-bold">
-            ALGO APP
-          </h2>
-        </button>
-      </nav>
+      <NavigationTitle bloq={bloq} />
       <div id={bloq} className="animate-appear">
         <div className="pt-10 md:pt-12">
           <h2 className="text-2xl text-center text-white font-bold">

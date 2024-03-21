@@ -69,7 +69,7 @@ const Home = () => {
                 className="ease-in-out duration-100 hover:bg-blue-100/25 text-white text-sm flex gap-2 place-content-center border rounded-lg py-4 md:w-3/6 lg:w-2/6"
                 href={"/algo-search"}
               >
-                ALGO SEARCH PLAYGROUND
+                ALGO SEARCH
                 <Image
                   src={"/img/arrow_right.svg"}
                   alt="arrow"
@@ -90,7 +90,7 @@ const Home = () => {
                 className="ease-in-out duration-100 hover:bg-blue-100/25 text-white text-sm flex gap-2 place-content-center border rounded-lg py-4 md:w-3/6 lg:w-2/6"
                 href={"/algo-sort"}
               >
-                ALGO SORT PLAYGROUND
+                ALGO SORT
                 <Image
                   src={"/img/arrow_right.svg"}
                   alt="arrow"

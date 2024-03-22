@@ -1,5 +1,4 @@
 "use client";
-import { buttonSelected } from "@/libs/helpers";
 import React, { useEffect, useState } from "react";
 
 const defArray = [
@@ -51,7 +50,7 @@ const AlgoSearchPlayground = () => {
           onClick={() => setAlgo("B")}
           className={
             algo === "B"
-              ? "w-3/6 py-2 text-black border border-blue-300 rounded-md bg-blue-50/45"
+              ? "w-3/6 py-2 text-white border border-blue-300 rounded-md bg-blue-50/20"
               : "w-3/6 py-2 text-white border border-blue-300 hover:bg-blue-50/10 rounded-md"
           }
         >
@@ -61,7 +60,7 @@ const AlgoSearchPlayground = () => {
           onClick={() => setAlgo("L")}
           className={
             algo === "L"
-              ? "w-3/6 py-2 text-black border border-blue-300 rounded-md bg-blue-50/45"
+              ? "w-3/6 py-2 text-white border border-blue-300 rounded-md bg-blue-50/20"
               : "w-3/6 py-2 text-white border border-blue-300 hover:bg-blue-50/10 rounded-md"
           }
         >

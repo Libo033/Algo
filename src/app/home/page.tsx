@@ -54,7 +54,10 @@ const Home = () => {
             {info.whatis.title}
           </p>
           {info.whatis.text.map((t) => (
-            <p className="text-white text-sm text-justify mb-4 md:text-base">
+            <p
+              key={t}
+              className="text-white text-sm text-justify mb-4 md:text-base"
+            >
               {t}
             </p>
           ))}

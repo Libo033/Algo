@@ -25,7 +25,7 @@ export default function Home() {
             never before.
           </h4>
         </div>
-        <div className="mt-16 flex justify-center items-center md:h-2/6 lg:h-1/6 lg:mt-4 xl:h-2/6">
+        <div className="mt-16 flex justify-center items-center md:h-2/6 md:mt-12 lg:h-1/6 lg:mt-4 xl:h-2/6">
           <Link
             className="ease-in-out duration-100 hover:bg-blue-100/25 text-2xl text-white flex gap-4 place-content-center border rounded-lg py-2 px-10 sm:w-96 sm:text-4xl sm:px-12"
             href={"/home"}

@@ -25,7 +25,10 @@ const AlgoSort = () => {
         </div>
         <div className="pt-6 md:pt-8">
           {info.sort.map((al) => (
-            <div className="px-4 mb-10 md:px-12 lg:px-28 xl:px-44">
+            <div
+              key={al.title}
+              className="px-4 mb-10 md:px-12 lg:px-28 xl:px-44"
+            >
               <p className="text-white text-xl underline mb-2 md:text-2xl">
                 {al.title}
               </p>

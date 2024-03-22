@@ -1,4 +1,5 @@
 "use client";
+import { sleep } from "@/libs/helpers";
 import React, { useEffect, useState } from "react";
 
 const defArray = [
@@ -16,6 +17,86 @@ const defArray = [
 const AlgoSearchPlayground = () => {
   const [limit, setLimit] = useState<number>(40);
   const [algo, setAlgo] = useState<string>("");
+  const [isSearch, setIsSearch] = useState<boolean>(false);
+  const [time, setTime] = useState<number>(0);
+  const [actNum, setActNum] = useState<number>(0);
+
+  const handleSearch = async () => {
+    try {
+      let arrayModel = defArray.slice(0, limit);
+      const delay = parseInt(
+        (document.getElementById("delay") as HTMLInputElement).value
+      );
+      const toSearch = parseInt(
+        (document.getElementById("toSearch") as HTMLInputElement).value
+      );
+
+      if (algo === "L") {
+        await secuencialSearch(delay, toSearch, arrayModel);
+      } else if (algo === "B") {
+        await binarySearch(delay, toSearch, arrayModel);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const secuencialSearch = async (
+    delay: number,
+    toSearch: number,
+    arrayModel: number[]
+  ) => {
+    let begin = Date.now();
+
+    setIsSearch(true);
+    let i: number = 0;
+    if (toSearch !== undefined) {
+      for (i = 0; i < arrayModel.length + 1; i++) {
+        delay !== undefined ? await sleep(delay) : await sleep(0);
+        setActNum(i);
+        if (i === toSearch) {
+          break;
+        }
+      }
+      if (i !== toSearch && i === arrayModel.length + 1) {
+        setActNum(0);
+      }
+    }
+    setIsSearch(false);
+
+    let end = Date.now();
+    setTime((-begin + end) / 1000);
+  };
+
+  const binarySearch = async (
+    delay: number,
+    toSearch: number,
+    arrayModel: number[]
+  ) => {
+    let begin = Date.now();
+
+    setIsSearch(true);
+    let start = 0,
+      end = arrayModel.length - 1;
+    if (toSearch !== undefined) {
+      while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+        setActNum(arrayModel[mid]);
+        if (arrayModel[mid] === toSearch) {
+          break;
+        } else if (arrayModel[mid] < toSearch) {
+          start = mid + 1;
+        } else {
+          end = mid - 1;
+        }
+        delay !== undefined ? await sleep(delay) : await sleep(0);
+      }
+    }
+    setIsSearch(false);
+
+    let endTime = Date.now();
+    setTime((-begin + endTime) / 1000);
+  };
 
   useEffect(() => {
     if (window) {
@@ -33,14 +114,22 @@ const AlgoSearchPlayground = () => {
           defArray.slice(0, limit).map((v) => (
             <span
               key={v}
-              className="w-14 text-white border border-blue-200/50 rounded-full p-4 text-center text-sm"
+              className={
+                v === actNum
+                  ? "w-14 text-white border border-blue-200/50 rounded-full p-4 text-center text-sm bg-blue-50/25"
+                  : "w-14 text-white border border-blue-200/50 rounded-full p-4 text-center text-sm"
+              }
             >
               {v}
             </span>
           ))}
       </section>
       <div className="py-8 flex justify-center">
-        <button className="w-3/6 py-2 text-white border border-blue-300 rounded-md hover:bg-blue-50/10">
+        <button
+          disabled={isSearch}
+          className="w-3/6 py-2 text-white border border-blue-300 rounded-md hover:bg-blue-50/10"
+          onClick={() => handleSearch()}
+        >
           INICIAR
         </button>
       </div>
@@ -88,6 +177,18 @@ const AlgoSearchPlayground = () => {
           type="number"
           autoComplete="off"
           defaultValue={10}
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <label className="text-white text-xl mt-4" htmlFor="delay">
+          Timer
+        </label>
+        <input
+          className="w-2/6 px-2 py-3 bg-slate-300 border border-blue-800 rounded-md outline-0 outline-blue-300 outline focus:bg-white focus:outline-1 hover:bg-slate-200 lg:w-1/6"
+          type="number"
+          disabled
+          defaultValue={0}
+          value={time}
         />
       </div>
     </div>

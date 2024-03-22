@@ -2,6 +2,7 @@
 import NavigationTitle from "@/components/NavigationTitle";
 import React, { useEffect, useId } from "react";
 import info from "../../libs/Algo.json";
+import AlgoSortPlayground from "@/components/AlgoSortPlayground";
 
 const AlgoSort = () => {
   const bloq = useId();
@@ -38,6 +39,11 @@ const AlgoSort = () => {
             </div>
           ))}
         </div>
+        <div className="border border-blue-50/25 mx-4 md:mx-12 lg:mx-28 xl:mx-44"></div>
+        <h3 className="text-2xl text-center text-white py-6">
+          ALGO PLAYGROUND
+        </h3>
+        <AlgoSortPlayground />
       </div>
     </div>
   );

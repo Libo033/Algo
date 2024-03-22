@@ -41,7 +41,7 @@ const AlgoSearchPlayground = () => {
           ))}
       </section>
       <div className="py-8 flex justify-center">
-        <button className="w-3/6 py-2 text-white border border-blue-300 bg-blue-50/10 rounded-md">
+        <button className="w-3/6 py-2 text-white border border-blue-300 rounded-md hover:bg-blue-50/10">
           INICIAR
         </button>
       </div>
@@ -49,13 +49,21 @@ const AlgoSearchPlayground = () => {
       <div className="flex gap-2 mt-2 mb-4 lg:gap-6">
         <button
           onClick={() => setAlgo("B")}
-          className={buttonSelected(algo, "B")}
+          className={
+            algo === "B"
+              ? "w-3/6 py-2 text-black border border-blue-300 rounded-md bg-blue-50/50"
+              : "w-3/6 py-2 text-white border border-blue-300 hover:bg-blue-50/10 rounded-md"
+          }
         >
           BINARY SEARCH
         </button>
         <button
           onClick={() => setAlgo("L")}
-          className={buttonSelected(algo, "L")}
+          className={
+            algo === "L"
+              ? "w-3/6 py-2 text-black border border-blue-300 rounded-md bg-blue-50/50"
+              : "w-3/6 py-2 text-white border border-blue-300 hover:bg-blue-50/10 rounded-md"
+          }
         >
           LINEAR SEARCH
         </button>

@@ -21,9 +21,10 @@ const AlgoSearchPlayground = () => {
   const handleSearch = async () => {
     try {
       let arrayModel = defArray.slice(0, limit);
-      const delay = parseInt(
-        (document.getElementById("delay") as HTMLInputElement).value
-      );
+      const delay =
+        parseInt(
+          (document.getElementById("delay") as HTMLInputElement).value
+        ) || 0;
       const toSearch = parseInt(
         (document.getElementById("toSearch") as HTMLInputElement).value
       );
@@ -49,7 +50,7 @@ const AlgoSearchPlayground = () => {
     let i: number = 0;
     if (toSearch !== undefined) {
       for (i = 0; i < arrayModel.length + 1; i++) {
-        delay !== undefined ? await sleep(delay) : await sleep(0);
+        await sleep(delay);
         setActNum(i);
         if (i === toSearch) {
           break;
@@ -86,7 +87,7 @@ const AlgoSearchPlayground = () => {
         } else {
           end = mid - 1;
         }
-        delay !== undefined ? await sleep(delay) : await sleep(0);
+        await sleep(delay);
       }
     }
     setIsSearch(false);

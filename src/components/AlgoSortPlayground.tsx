@@ -47,7 +47,7 @@ const AlgoSortPlayground = () => {
           const temp = sortedValues[j];
           sortedValues[j] = sortedValues[j + 1];
           sortedValues[j + 1] = temp;
-          delay !== undefined ? await sleep(delay) : await sleep(0);
+          await sleep(delay);
           setSortedValues([...sortedValues]);
         }
       }
@@ -78,7 +78,7 @@ const AlgoSortPlayground = () => {
         pos--;
       }
 
-      delay !== undefined ? await sleep(delay) : await sleep(0);
+      await sleep(delay);
       setSortedValues([...sortedValues]);
     }
 
@@ -104,7 +104,7 @@ const AlgoSortPlayground = () => {
       }
       sortedValues[j + 1] = current;
 
-      delay !== undefined ? await sleep(delay) : await sleep(0);
+      await sleep(delay);
       setSortedValues([...sortedValues]);
     }
     setReset(false);
